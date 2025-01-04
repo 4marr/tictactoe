@@ -24,6 +24,8 @@ function Board({ xIsNext, squares, onPlay }) {
     let status;
     if (winner) {
         status = `Winner: ${winner}`;
+    } else if (squares.every(Boolean)) {
+        status = 'Draw. No one won.';
     } else {
         status = `Next player: ${xIsNext ? 'X' : 'O'}`;
     }
